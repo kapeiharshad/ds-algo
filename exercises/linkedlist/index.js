@@ -64,13 +64,26 @@ class LinkedList {
     }
     return (pre.next = null);
   }
-  insertLast(data){
-let last = this.getLast();
-if (last) {
-  last.next=new Node(data)
-} else {
-  this.head= new Node(data)
-}
+  insertLast(data) {
+    let last = this.getLast();
+    if (last) {
+      last.next=new Node(data)
+    } else {
+      this.head= new Node(data)
+    }
+  }
+  getAt(index) {
+    let node = this.head;
+    if (!node) {
+      return null
+    }
+    for (let i = 0; i <= index; i++) {
+      if (i===index) {
+        return node
+      }
+      node = node.next
+    }
+    return null
   }
 }
 module.exports = { Node, LinkedList };
