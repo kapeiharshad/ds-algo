@@ -15,7 +15,21 @@ return arr
 }
 
 function selectionSort(arr) {
-
+for (let i = 0; i < arr.length-1; i++) {
+    let indexOfMin=i;
+    for (let j = i+1; j < arr.length; j++) {
+       if (arr[indexOfMin]>arr[j]) {
+        indexOfMin=j
+       }
+    }
+    if (i !== indexOfMin) {
+        const swap=arr[i];
+        arr[i]=arr[indexOfMin];
+        arr[indexOfMin]=swap
+    }
+}
+console.log("arr:::",arr)
+return arr
 }
 
 function mergeSort(arr) {
